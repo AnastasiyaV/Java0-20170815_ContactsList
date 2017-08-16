@@ -54,7 +54,7 @@ public class Main {
 			System.out.println("Please enter the actual contact value");
 			String contact = sc.next();
 			System.out.println("Please pick the type of new contact: family, work, friends or other");
-			ContactType contactType = ContactType.valueOf().sc.next();
+			ContactType contactType = ContactType.valueOf(sc.next());
 			Contact contact1 = contactCreator.create(name, contact, contactType);
 
 			if (contactKind.equalsIgnoreCase("email")) {
