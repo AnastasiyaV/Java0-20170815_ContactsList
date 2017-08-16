@@ -7,21 +7,21 @@ public class EmailContact implements Contact {
 
 	private String name;
 	private String emailAdress;
-	private String contactType;
+	private ContactType contactType;
 
 	public EmailContact(String name, String emailAdress) {
 		this.name = name;
 		this.emailAdress = emailAdress;
-		this.contactType = "OTHERS";
+		this.contactType = ContactType.OTHER;
 	}
 
-	public EmailContact(String name, String emailAdress, String contactType) {
+	public EmailContact(String name, String emailAdress, ContactType contactType) {
 		this.name = name;
 		this.emailAdress = emailAdress;
 		this.contactType = contactType;
 	}
 
-	public String getContactType() {
+	public ContactType getContactType() {
 		return contactType;
 	}
 

@@ -1,13 +1,14 @@
 package main.java.com.skillsup.syniaeva.services.sorters;
 
 import main.java.com.skillsup.syniaeva.entities.PhoneContact;
-import main.java.com.skillsup.syniaeva.services.comparators.PhoneContactsComparator;
+import main.java.com.skillsup.syniaeva.services.comparators.ContactComparator;
+import main.java.com.skillsup.syniaeva.services.comparators.ContactComparator;
 
 /**
  * Created by osyniaeva on 8/14/17.
  */
 public class PhoneNumberContactsSorter {
-	private static void sort(PhoneContact[] originalContactsArray, PhoneContactsComparator comparator) {
+	private static void sort(PhoneContact[] originalContactsArray, ContactComparator comparator) {
 
 		for (int i = originalContactsArray.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
@@ -22,7 +23,7 @@ public class PhoneNumberContactsSorter {
 	}
 
 	public static PhoneContact[] sortByName(PhoneContact[] originalContactsArray) {
-		sort(originalContactsArray, new PhoneContactsComparator() {
+		sort(originalContactsArray, new ContactComparator<PhoneContact>() {
 			@Override
 			public boolean compare(PhoneContact first, PhoneContact second) {
 				if (first.getName().compareTo(second.getName())>0) {
@@ -35,10 +36,10 @@ public class PhoneNumberContactsSorter {
 	}
 
 	public static PhoneContact[] sortByContactType(PhoneContact[] originalContactsArray) {
-		sort(originalContactsArray, new PhoneContactsComparator() {
+		sort(originalContactsArray, new ContactComparator <PhoneContact>() {
 			@Override
 			public boolean compare(PhoneContact first, PhoneContact second) {
-				if (first.getContactType().toUpperCase().compareTo(second.getContactType().toUpperCase())>0) {
+				if (first.getContactType().name().toUpperCase().compareTo(second.getContactType().name().toUpperCase())>0) {
 					return true;
 				}
 				return false;

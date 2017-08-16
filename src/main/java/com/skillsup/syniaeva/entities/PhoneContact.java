@@ -7,21 +7,21 @@ public class PhoneContact implements Contact {
 
 	private String name;
 	private String phoneNumber;
-	private String contactType;
+	private ContactType contactType;
 
 	public PhoneContact(String name, String phoneNumber) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.contactType = "OTHERS";
+		this.contactType = ContactType.OTHER;
 	}
 
-	public PhoneContact(String name, String phoneNumber, String contactType) {
+	public PhoneContact(String name, String phoneNumber, ContactType contactType) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.contactType = contactType;
 	}
 
-	public String getContactType() {
+	public ContactType getContactType() {
 		return contactType;
 	}
 

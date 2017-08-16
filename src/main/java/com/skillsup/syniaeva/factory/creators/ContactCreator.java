@@ -1,6 +1,7 @@
 package main.java.com.skillsup.syniaeva.factory.creators;
 
 import main.java.com.skillsup.syniaeva.entities.Contact;
+import main.java.com.skillsup.syniaeva.entities.ContactType;
 import main.java.com.skillsup.syniaeva.store.ContactsList;
 
 /**
@@ -8,5 +9,5 @@ import main.java.com.skillsup.syniaeva.store.ContactsList;
  */
 public interface ContactCreator {
 	Contact create(String name, String contact);
-	Contact create(String name, String contact, String contactType);
+	Contact create(String name, String contact, ContactType contactType);
 }
